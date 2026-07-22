@@ -42,7 +42,7 @@ def encrypt_image(bb84_key):
     print("-" * 70)
     print(nonce.hex())
 
-    # AES-256 CTR
+    # AES-256 CTR Encryption
     cipher = AES.new(aes_key, AES.MODE_CTR, nonce=nonce)
 
     encrypted_bytes = cipher.encrypt(image_bytes)
@@ -53,7 +53,11 @@ def encrypt_image(bb84_key):
         encrypted_bytes
     )
 
-    output_file = "encrypted_visual.png"
+    # Output Image Name
+    output_file = input("\nEnter Output Image Name (e.g. encrypted1.png): ").strip()
+
+    if not output_file.endswith(".png"):
+        output_file += ".png"
 
     encrypted_image.save(output_file)
 

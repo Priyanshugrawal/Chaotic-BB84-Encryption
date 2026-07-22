@@ -113,8 +113,8 @@ def generate_lorenz_key():
 
     print("\nKey Length :", len(binary_key), "bits")
 
-    print("\nFirst 64 Bits")
-    print(binary_key[:64])
+    print("\nlast 64 Bits")
+    print(binary_key[-64:])
 
     # ----------------------------------------------------------
     # Lorenz Time Series (Separate Subplots)
